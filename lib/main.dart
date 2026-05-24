@@ -225,8 +225,8 @@ class _NotesPageState extends State<NotesPage> {
 
                 await _addNote(title, description);
 
-                if (!mounted) return;
-                Navigator.pop(context);
+                if (!context.mounted) return;
+                Navigator.of(context).pop();
               },
               icon: const Icon(Icons.add),
               label: const Text('Додати'),
@@ -305,7 +305,7 @@ class _NotesPageState extends State<NotesPage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.18),
+        color: Colors.white.withValues(alpha:0.18),
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: Colors.white24),
       ),
@@ -341,7 +341,7 @@ class _NotesPageState extends State<NotesPage> {
                 width: 88,
                 height: 88,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6C63FF).withOpacity(0.12),
+                  color: const Color(0xFF6C63FF).withValues(alpha:0.12),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -409,7 +409,7 @@ class _NotesPageState extends State<NotesPage> {
                 borderRadius: BorderRadius.circular(22),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.07),
+                    color: Colors.black.withValues(alpha:0.07),
                     blurRadius: 18,
                     offset: const Offset(0, 8),
                   ),
@@ -424,7 +424,7 @@ class _NotesPageState extends State<NotesPage> {
                   width: 46,
                   height: 46,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6C63FF).withOpacity(0.12),
+                    color: const Color(0xFF6C63FF).withValues(alpha:0.12),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Center(
